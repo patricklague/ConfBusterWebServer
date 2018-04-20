@@ -1,0 +1,1 @@
+# File allowing the directory to be imported in the application

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ConfBuster - Open-Source Tools for Macrocycle Conformational Search and Analysis</title>
+  <meta charset="utf-8" />  
+  <meta name="description" content="ConfBuster is a suite of tools written in Python with the goal of identifying the lowest energy conformations of macrocycles. This server allows you to freely use ConfBuster without software installation."/>
+  <meta name="keywords" content="molecule,macrocycle,macromolecule,macrocycle-conformation,macrocycles-conformational-search,analysis,Macrocycles,conformational search,conformational sampling,molecular modelling,open-source tools,heatmap,click chemistry tools,cheminformatics,rational drug design,drug development,drug"/>
+  <meta name="author" content="Begin,G.,Barbeau,X.,Vincent,A.T.,Lague,P."/>
+
+  <link rel="icon" href="favicon.ico">
+
+  <link href="css/Bootstrap.min.css" rel="stylesheet">
+  <link href="css/UIStyle.css" rel="stylesheet">
+
+  <script src='js/UILogic.js'></script>
+  <script src='js/jQuery.min.js'></script>  
+</head>
+
+<body>
+<div id="PrincipalContainer" class="container-fluid">
+
+  <!-- TITLE -->
+  <nav id="nav_bar" class="row text_bold">
+    <p id="NavTitle"class="col-sm-12">
+      Open-Source Tools for Macrocycle Conformational Search and Analysis
+    </p>
+  </nav>
+
+  <div id="middle_row" class="row">
+
+    <!-- MIDDLE COLUMN -->
+    <div id="middle_column" class="col-lg-12 column_padding text_normal" style="min-height: 750px"> 
+        
+      <div id="text_flash">
+        <section class="row text_bold">
+            <article class="offset-sm-1 col-sm-10 offset-sm-1">
+                <p id="middle_row_title">404 Error</p>
+            </article>
+        </section>
+
+        <div id="input_title_liscenceConfidentiality" class="input_title text_bold"></div> 
+        <section class="row">
+            <article id="liscenceAndConfidentiality" class="col-sm-12 article_wrapper">
+            </article>
+        </section>
+
+        <section class="row text_bold">
+        <article class="offset-sm-3 col-sm-6 offset-sm-3">
+            <div  id="submit_button"
+                onmouseover="changeToPointerCursor()"
+                onmouseout="changeToRegularCursor()"
+                onclick="goToPage('/')">
+                Back to Home Page
+            </div>
+        </article>
+        </section>        
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="row text_bold">
+      <figure class="col-sm-4">
+        <img  src="img/IBIS_Logo.png" 
+              class="img-fluid logo_footer"
+              class="img-fluid logo_footer"
+              onmouseover="changeToPointerCursor()"
+              onmouseout="changeToRegularCursor()"
+              onclick="openLinkInNewTab('http://www.ibis.ulaval.ca')" />
+      </figure>
+      <div id="information_footer" class="col-sm-4">
+        <p><em id="copyright">Copyright&nbsp;&copy; IBIS,&nbsp;Universit&eacute;&nbsp;Laval</em></p>
+        <p><em id="contact" class="text_italic">For&nbsp;additional&nbsp;information, please&nbsp;contact&nbsp;:</em></p>
+        <img  id="img_contact"
+              class="img-fluid"
+              src="img/Contact.png" 
+              onmouseover="changeToPointerCursor()"
+              onmouseout="changeToRegularCursor()"
+              onclick="openLinkInNewTab('http://www.ibis.ulaval.ca/?pg=patrickLague')" />              
+      </div>
+      <figure class="col-sm-4">
+        <img src="img/ULaval_Logo.png"
+             class="img-fluid logo_footer"
+             onmouseover="changeToPointerCursor()"
+             onmouseout="changeToRegularCursor()"
+             onclick="openLinkInNewTab('http://ulaval.ca')" />
+      </figure>
+  </footer>
+
+</div>
+
+</body>
+
+</html>

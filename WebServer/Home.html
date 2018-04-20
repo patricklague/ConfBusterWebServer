@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ConfBuster - Open-Source Tools for Macrocycle Conformational Search and Analysis</title>
+  <meta charset="utf-8" />  
+  <meta name="description" content="ConfBuster is a suite of tools written in Python with the goal of identifying the lowest energy conformations of macrocycles. This server allows you to freely use ConfBuster without software installation."/>
+  <meta name="keywords" content="molecule,macrocycle,macromolecule,macrocycle-conformation,macrocycles-conformational-search,analysis,Macrocycles,conformational search,conformational sampling,molecular modelling,open-source tools,heatmap,click chemistry tools,cheminformatics,rational drug design,drug development,drug"/>
+  <meta name="author" content="Begin,G.,Barbeau,X.,Vincent,A.T.,Lague,P."/>
+  
+  <link rel="icon" href="favicon.ico">
+
+  <link href="css/Bootstrap.min.css" rel="stylesheet">
+  <link href="css/UIStyle.css" rel="stylesheet">
+
+  <script src='js/UILogic.js'></script>
+  <script src='js/jQuery.min.js'></script>  
+
+  <script>
+  $(document).ready(function() {
+    $(window).keydown(function(event){
+      if(event.keyCode == 13) {
+        event.preventDefault();
+        return false;
+      }
+    });
+  });
+  var SuperGlobalFileSize = -1;
+  </script>
+</head>
+
+<body>
+<div id="PrincipalContainer" class="container-fluid">
+
+  <!-- TITLE -->
+  <nav id="nav_bar" class="row text_bold">
+    <p id="NavTitle"class="col-sm-12">
+      Open-Source Tools for Macrocycle Conformational Search and Analysis
+    </p>
+  </nav>
+
+  <div id="middle_row" class="row">
+    <!-- LEFT COLUMN -->
+    <div id="left_column" class="col-lg-5 column_padding text_bold">
+      <section class="row">
+        <figure>
+          <img id="logo_confbuster" src="img/ConfBuster_Logo.png" class="img-fluid"/>
+          <figcaption id="description" class="text_justified"> 
+            <p>ConfBuster is a suite of tools written in Python with the goal of identifying the lowest energy conformations of macrocycles. The suite also includes tools for the analysis and visualisation of the conformational search results. Coordinate sets of a single molecule in PDB/SDF/MOL/MOL2 format is required as input. A set of conformation coordinates is returned as output, as well as PyMOL script and graphics for results analysis. Identified conformations are sorted from the lowest to the highest energy</p>
+            <p>The link to download the suite and this server are provided below. The present server allows you to freely use ConfBuster without software installation.</p>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="row separator"></section>
+      
+      <section class="row">
+        <article id="please_cite" class="col-sm-12">
+          Please&nbsp;cite&nbsp;!
+        </article>
+      </section>   
+
+      <section class="row separator"></section>
+
+      <section class="row">
+        <article id="confbuster_paper_top" 
+                class="text_italic text_justified">
+          B&eacute;gin,&nbsp;G., Barbeau,&nbsp;X., Vincent,&nbsp;A.T. &amp; Lag&uuml;e,&nbsp;P.
+          ConfBuster&nbsp;Web&nbsp;Server: a free web application for macrocycle conformational search and analysis (in preparation).
+        </article>
+        <article id="confbuster_paper_bottom" 
+                class="text_italic text_justified" 
+                onmouseover="changeToPointerCursor()"
+                onmouseout="changeToRegularCursor()"
+                onclick="openLinkInNewTab('http://doi.org/10.5334/jors.189')">
+          Barbeau,&nbsp;X., Vincent,&nbsp;A.T. &amp; Lag&uuml;e,&nbsp;P., (2018). 
+          ConfBuster: Open-Source Tools for Macrocycle Conformational Search and Analysis. 
+          Journal of Open Research Software. 6(1),&nbsp;p.1. 
+          DOI:&nbsp;<em class="text_underlined">http://doi.org/10.5334/jors.189</em>
+        </article>
+      </section>
+
+      <section class="row separator"></section>
+
+      <section class="row github">
+        <article class="col-sm-6"
+                onmouseover="changeToPointerCursor()"
+                onmouseout="changeToRegularCursor()"
+                onclick="openLinkInNewTab('https://github.com/patricklague/ConfBusterWebServer')">
+            <img src="img/GitHub_Logo.png" >
+            Download&nbsp;ConfBuster Web&nbsp;Server
+        </article>
+        <article class="col-sm-6"
+                onmouseover="changeToPointerCursor()"
+                onmouseout="changeToRegularCursor()"
+                onclick="openLinkInNewTab('https://github.com/patricklague/ConfBuster')">
+            <img src="img/GitHub_Logo.png" >
+            Download&nbsp;ConfBuster
+        </article>
+      </section>
+    </div>
+    
+    <!-- MIDDLE COLUMN -->
+    <div id="middle_column" class="col-lg-7 column_padding text_normal"> 
+              
+      <section class="row text_bold">
+        <article class="offset-sm-1 col-sm-10 offset-sm-1">
+            <section class="row separator"></section>
+            <p id="middle_row_title">Start a Macrocycle Conformational Search</p>
+            <section class="row separator"></section>
+            <p id="middle_row_titre_description" class="text_italic">Let our servers run ConfBuster for you</p>            
+        </article>                
+      </section>
+
+      <section id="section_form" class="row">
+        <form id="form"
+              name="mainForm" 
+              onkeypress="return event.keyCode != 13;"
+              action="DataReception.php"
+              method="POST" 
+              enctype="multipart/form-data"
+              class="col-sm-12">
+
+          <!-- EMAIL -->
+          <div class="input_title text_bold">Email</div> 
+          <section class="row">
+            <article class="col-sm-12 article_wrapper">
+              <label for="form_email_input" class="lbl_form_input">
+                <img src="img/Email.png" width="56" height="56"/>
+              </label>
+              <input id="form_email_input" 
+                    class="input_field" 
+                    type="email" 
+                    name="email"
+                    placeholder="recipient@example.com"
+                    onkeyup="validateEmailProvider('emailWarningProvider');"
+                    onblur="validateEmailProvider('emailWarningProvider');"/>
+              <ul class="article_description text_italic">
+                <li>The results (.zip file) will be sent to this address</li>
+                <li>Attention: The email client has to allow attachment</li>
+                <li id="emailWarningProvider">Attention: The email provider has to allow attachment</li>
+                <li id="emailErrorFormat">Accepted email format: recipient@example.com</li>
+                <li id="emailErrorLength">Accepted email length: 50 characters</li>
+              </ul>
+            </article>
+          </section>
+
+          <!-- FILE -->
+          <div id="input_title_file" class="input_title text_bold">Coordinate File</div>
+          <section class="row article_wrapper">
+            <article class="col-sm-12">
+              <label for="form_file_input" class="lbl_form_input">
+                <img src="img/File.png" width="56" height="56"/>
+              </label>
+              <input  id="form_file_input" 
+                      class="input_field" 
+                      type="file" 
+                      name="datafile"     
+                      onchange="SuperGlobalFileSize = this.files[0].size;$('#text_submit_button').fadeOut('slow');$('#text_submit_button').fadeIn('slow');"
+                      placeholder="macrocycle.pdb or macrocycle.mol2" /> 
+              <ul class="article_description text_italic">
+                <li>Only one macrocycle per file</li>
+                <li id="fileErrorChar">Accepted file name characters: A-Z, a-z, 0-9, "-" , "_" , "."</li>
+                <li id="fileErrorName">Accepted file name length: 50 characters</li>
+                <li id="fileErrorExtension">Accepted file extensions: .pdb / .sdf / .mol / .mol2</li>
+                <li id="fileErrorSize">Accepted file size: 1 - 1000 kb</li>                
+              </ul>
+           </article>
+          </section>
+
+          <!-- SUBMIT BUTTON -->
+          <section class="row text_bold">
+            <article class="offset-sm-3 col-sm-6 offset-sm-3">
+              <div  id="submit_button"
+                    onmouseover="changeToPointerCursor()"
+                    onmouseout="changeToRegularCursor()"
+                    onclick="submitForm()">
+                    <a id="text_submit_button">Submit to ConfBuster</a>
+              </div>
+            </article>
+          </section>
+
+          <!-- EXAMPLES -->
+          <div id="input_title_examples" class="input_title text_bold">Download Examples</div>
+          <section id="section_examples" class="row">
+            <article  class="col-sm-4 example_button_wrapper"
+                      onmouseover="changeToPointerCursor()"
+                      onmouseout="changeToRegularCursor()"
+                      onclick="openLinkInNewTab('file/ConfBuster_Input-Example_1W96.zip')">
+              <div class="example_button">
+                Input example
+              </div>
+            </article>
+            <article  class="col-sm-4 example_button_wrapper"
+                      onmouseover="changeToPointerCursor()"
+                      onmouseout="changeToRegularCursor()"
+                      onclick="openLinkInNewTab('file/ConfBuster_Output-Example_1W96.zip')">
+              <div class="example_button">
+                Output example
+              </div>
+            </article>
+            <article  class="col-sm-4 example_button_wrapper"
+                      onmouseover="changeToPointerCursor()"
+                      onmouseout="changeToRegularCursor()"
+                      onclick="openLinkInNewTab('file/ConfBuster_Examples-and-Instructions.pdf')">
+              <div class="example_button">
+                More examples
+              </div>
+            </article>  
+          </section> 
+
+          <!-- SKETCH -->
+          <div id="input_title_sketchers" class="input_title text_bold">Sketch a Macrocycle (external links)</div>
+          <section id="section_sketchers" class="row">
+            <article  class="col-sm-1 "></article>
+            <article  class="col-sm-5 example_button_wrapper"
+                      onmouseover="changeToPointerCursor()"
+                      onmouseout="changeToRegularCursor()"
+                      onclick="openLinkInNewTab('https://marvinjs-demo.chemaxon.com/latest/')">
+              <div class="example_button">
+                Marvin JS
+              </div>
+            </article>
+            <article  class="col-sm-5 example_button_wrapper"
+                      onmouseover="changeToPointerCursor()"
+                      onmouseout="changeToRegularCursor()"
+                      onclick="openLinkInNewTab('https://web.chemdoodle.com/demos/2d-to-3d-coordinates/')">
+              <div class="example_button">
+                ChemDoodle
+              </div>
+            </article>
+            <article  class="col-sm-1 "></article>
+          </section> 
+
+          <!-- ADDITIONAL INFORMATION -->
+          <div id="input_title_liscenceConfidentiality" class="input_title text_bold">Additional Information</div> 
+          <section class="row">
+            <article id="liscenceAndConfidentiality" class="col-sm-12 article_wrapper">
+              <ul class="article_description text_italic">
+                <li><em class="text_underlined"
+                        onmouseover="changeToPointerCursor()"
+                        onmouseout="changeToRegularCursor()"
+                        onclick="openLinkInNewTab('https://github.com/patricklague/ConfBuster/blob/master/LICENSE')">
+                        ConfBuster and ConfBuster Web Server are under GNU General Public License v3.0</em></li>
+                <li>ConfBuster uses an heuristic algorithm: the results may vary</li>
+                <li>ConfBuster needs 3D coordinates: a file with only 2D coordinates will be rejected</li>
+                <li>ConfBuster needs hydrogen atoms: a molecule without hydrogen will be rejected</li>
+                <li>The input file, the result files, and the email address will be deleted after the compute session</li>
+              </ul>
+            </article>
+          </section>
+
+        </form>        
+      </section>
+      
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="row text_bold">
+      <figure class="col-sm-4">
+        <img  src="img/IBIS_Logo.png" 
+              class="img-fluid logo_footer"
+              class="img-fluid logo_footer"
+              onmouseover="changeToPointerCursor()"
+              onmouseout="changeToRegularCursor()"
+              onclick="openLinkInNewTab('http://www.ibis.ulaval.ca')" />
+      </figure>
+      <div id="information_footer" class="col-sm-4">
+        <p><em id="copyright">Copyright&nbsp;&copy; IBIS,&nbsp;Universit&eacute;&nbsp;Laval</em></p>
+        <p><em id="contact" class="text_italic">For&nbsp;additional&nbsp;information, please&nbsp;contact&nbsp;:</em></p>
+        <img  id="img_contact"
+              class="img-fluid"
+              src="img/Contact.png" 
+              onmouseover="changeToPointerCursor()"
+              onmouseout="changeToRegularCursor()"
+              onclick="openLinkInNewTab('http://www.ibis.ulaval.ca/?pg=patrickLague')" />              
+      </div>
+      <figure class="col-sm-4">
+        <img src="img/ULaval_Logo.png"
+             class="img-fluid logo_footer"
+             onmouseover="changeToPointerCursor()"
+             onmouseout="changeToRegularCursor()"
+             onclick="openLinkInNewTab('http://ulaval.ca')" />
+      </figure>
+  </footer>
+
+</div>
+
+</body>
+
+</html>

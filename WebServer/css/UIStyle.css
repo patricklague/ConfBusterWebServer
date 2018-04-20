@@ -1,0 +1,243 @@
+/* ---------- General configuration ---------- */
+body {
+	background-color: rgb(97, 97, 97);
+	font-size: 12pt;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.column_padding {
+	padding-top: 25px;
+	padding-bottom: 25px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.separator {
+	border-top: solid 1px black;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.text_justified {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.text_underlined {
+	text-decoration: underline;
+}
+.text_bold {
+	font-weight: bold;
+}
+.text_italic {
+	font-style: italic;
+}
+.text_normal {
+	font-weight: normal;
+}
+
+
+/* ---------- Title bar ---------- */
+#nav_bar {
+	background-color:rgb(97, 97, 97);
+	text-align: center; 
+	vertical-align: middle;
+}
+#NavTitle
+{
+	padding-top: 5px;
+	margin: 0px;
+	color: antiquewhite;
+	vertical-align: middle;
+}
+
+
+/* ----------  Left Column  ---------- */
+#left_column {
+	background-color: aliceblue;
+	border-top: solid 5px rgb(97, 97, 97);
+	border-left: solid 5px rgb(97, 97, 97);
+	border-right: solid 5px rgb(97, 97, 97);
+	text-align: center;
+}
+
+#description {
+	padding-top: 25px;
+}
+
+#please_cite {
+	font-size: 16pt; 
+	text-align: center;
+}
+#confbuster_paper_top {
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+#confbuster_paper_bottom {
+	margin-bottom: 25px;	
+}
+.github {
+	vertical-align: middle;
+	text-align: center;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+
+/* ----------  Middle Column  ---------- */
+#middle_column {
+	background-color: rgba(240, 248, 255, 0.90);
+	border-top: solid 5px rgb(97, 97, 97);
+	border-left: solid 5px rgb(97, 97, 97);
+	border-right: solid 5px rgb(97, 97, 97);
+	text-align: center;
+}
+#middle_row_title {
+	font-size: 20pt;
+	margin: 0px;
+}
+#middle_row_titre_description {
+	margin-top: 10px;
+	font-size: 16pt;
+}
+/* ---  Form  --- */
+#section_form {
+	font-size: 14pt;
+	text-align: left;
+	vertical-align: top;
+}
+#form {
+	text-align: left;
+	padding: 0px;
+}
+.form_separator {	
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 80%;
+	height: 1px;
+	text-align: left;
+}
+/* ---  Input Related  --- */
+.input_title {
+	border-bottom: solid 3px black;	
+	font-style: normal;
+	font-size: 16pt;
+}
+#input_title_file{
+	padding-top: 10px;
+}
+.input_field {
+	width: 400px;
+	border-radius: 10px;
+	height: 35px;
+	margin-bottom: 15px;
+}
+/* ---  Form Input --- */
+.lbl_form_input {
+	margin: 0px;
+	padding: 0px;
+}
+#form_email_input{
+	padding-left: 10px;
+}
+#form_file_input {
+	width: 275px;
+}
+/* ---  Input Wrapper  --- */
+.article_wrapper {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.article_description {	
+	font-size: 12pt;
+	margin-top: 5px; 
+	margin-bottom: 5px; 
+}
+/* ---  Submit  --- */
+#submit_button {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 20px;
+	border: solid 2px black;
+	border-radius: 10px;
+	text-align: center;
+	vertical-align: middle;
+
+	font-size: 16pt;
+}
+#submit_button:hover {
+	background-color: rgba(0, 0, 0, 0.15);
+}
+/* ---  Examples  --- */
+#input_title_examples {
+	padding-top: 10px;
+}
+#section_examples {
+	padding-bottom: 10px;
+}
+.example_button_wrapper {
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-top:20px;
+	margin-bottom:5px;
+}
+.example_button {
+	padding : 3px;
+	border: solid 1px black;
+	border-radius: 5px;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 12pt;
+	font-style: normal;
+	font-weight: normal;
+}
+.example_button:hover {
+	background-color: rgba(0, 0, 0, 0.15);
+}
+/* ---  Sketchers  --- */
+#input_title_sketchers {
+	padding-top: 10px;
+}
+#section_sketchers {
+	padding-bottom: 10px;
+}
+/* ---  Liscence And Confidentiality  --- */
+#input_title_liscenceConfidentiality {
+	padding-top: 10px;
+}
+#liscenceAndConfidentiality {
+	text-align: left;	
+}
+
+
+/* ---------- Footer ---------- */
+footer {
+	background-color: rgb(97, 97, 97);
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: center;
+	vertical-align: middle;
+}
+#information_footer {
+	color: antiquewhite;
+}
+#copyright_information {
+	font-size: 18px !important;
+	padding-bottom: 10px;
+}
+#contact {
+	padding-bottom: 20px;
+}
+
+.logo_footer {
+	border: solid 2px black;
+	border-radius: 15px;
+}
+
+/* End UIStyle.css */
