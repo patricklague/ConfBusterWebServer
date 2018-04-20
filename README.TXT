@@ -1,7 +1,7 @@
 ============================================================
                    ConfBuster Web Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      Servers Installation and Deployment Instructions
+       Server Installation and Deployment Instructions
 ============================================================
 
 
@@ -11,7 +11,7 @@
 File Author : Gabriel Bégin
 Contact     : http://confbuster.org
 
-File        : README.txt
+File        : README.TXT
 Encoding    : UTF-8
 
 
@@ -34,7 +34,7 @@ DOI: http://doi.org/10.5334/jors.189
                      Table of Contents
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 (01-A) Please read before installing - Architecture
-(01-B) Please read before installing - System Commands
+(01-B) Please read before installing - Tested OS
 
 (02-A) External Dependencies - ConfBuster
 (02-B) External Dependencies - Python
@@ -74,12 +74,12 @@ ConfBuster Web Server distribution for additional details.
 
 
 ------------------------------------------------------------
-(01-B) Please read before installing - System Commands
+(01-B) Please read before installing - Tested OS
 ------------------------------------------------------------
-This installation/deployment protocol was tested on :
+The installation/deployment/configuration instructions were
+tested on the following operating system :
 
 Linux Mint 18.3 Cinnamon 3.6.7 64-bits
-
 
 
 ------------------------------------------------------------
@@ -182,7 +182,7 @@ Linux Mint 18.3 Cinnamon 3.6.7 64-bits
       # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       <IfModule dir_module>
           DirectoryIndex index.html index.php \
-                         Home.html home.html home.php
+                         Home.html Home.php home.html home.php
       </IfModule>
 
 
@@ -229,7 +229,7 @@ viii) Reboot the Apache server
 
 
 ii) Edit the URL corresponding to the location of the 
-    "ComputeJobPreparation.php" file in the JobPreparationServer.
+    "ComputeJobPreparation.php" file of the JobPreparationServer.
 
 
     If the JobPreparationServer is on another computer :
@@ -301,7 +301,7 @@ iii) Open the Apache Virtual Server configuration file
      sudo nano /var/www/ConfBuster/JobPreparationServer/BusinessLayer/Mail/MailManager.py
 
 
-.ii) Edit the Mailling information located in the 
+.ii) Edit the mailing information located in the 
      private attributes of the MailManager class.
 
 
@@ -375,13 +375,13 @@ iii) Install the database with the following command :
      sudo nano /var/www/ConfBuster/ComputeServer/BusinessLayer/ManagerClasses/MailManager.py
 
 
-.ii) Edit the Address of the Mail SMTP Server located in the 
+.ii) Edit the address of the Mail SMTP Server located in the 
      private attributes of the MailManager class.
 
 
 iii) Open the database manager :
 
-     nano /var/www/ConfBuster/ComputeServer/BusinessLayer/QueueManager.py
+     nano /var/www/ConfBuster/ComputeServer/DatabaseLayer/DatabaseManager.py
 
 
 .iv) Edit the database connection credentials located in the 
@@ -393,4 +393,4 @@ iii) Open the database manager :
 Enjoy !
 
 ------------------------------------------------------------
-End README.txt
+End README.TXT

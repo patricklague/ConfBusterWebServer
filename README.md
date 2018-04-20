@@ -1,10 +1,10 @@
 # ConfBuster Web Server
-![N|Solid](http://132.203.89.236/ConfBuster/confbuster.png)
+![N|Solid](https://confbuster.ibis.ulaval.ca/img/ConfBuster_Logo.png)
 
  # Table of Contents
  
 - (01-A) Please read before installing - Architecture
-- (01-B) Please read before installing - System Commands
+- (01-B) Please read before installing - Tested OS
 
 - (02-A) External Dependencies - ConfBuster
 - (02-B) External Dependencies - Python
@@ -44,9 +44,10 @@ ConfBuster Web Server distribution for additional details.
  ```
 
 
-**(01-B) Please read before installing - System Commands**
+**(01-B) Please read before installing - Tested OS**
  ```
-This installation/deployment protocol was tested on :
+The installation/deployment/configuration instructions were
+tested on the following operating system :
 
 Linux Mint 18.3 Cinnamon 3.6.7 64-bits
 
@@ -350,7 +351,7 @@ iii) Install the database with the following command :
 
 iii) Open the database manager :
 
-     nano /var/www/ConfBuster/ComputeServer/BusinessLayer/QueueManager.py
+     nano /var/www/ConfBuster/ComputeServer/DatabaseLayer/DatabaseManager.py
 
 
 .iv) Edit the database connection credentials located in the 
