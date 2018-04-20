@@ -120,7 +120,7 @@ Linux Mint 18.3 Cinnamon 3.6.7 64-bits
 
 
 **(03-A) Web Server - Installation**
- ```
+ 
 ..i) Create a folder named "ConfBuster" into the "/var/www" 
      directory.
 
@@ -131,7 +131,7 @@ Linux Mint 18.3 Cinnamon 3.6.7 64-bits
      into the directory "/var/www/ConfBuster".
 
      sudo mv WebServer /var/www/ConfBuster/
- ```
+ 
 
 **(03-B) Web Server - Deployment**
 
@@ -190,7 +190,7 @@ viii) Reboot the Apache server
 
 
 **(03-C) Web Server - Configuration**
- ```
+ 
 .i) Open the script used for redirecting the user's data to
     the Job Preparation Server :
 
@@ -209,11 +209,11 @@ ii) Edit the URL corresponding to the location of the
     If the JobPreparationServer is on the same computer :
 
     http://127.0.0.1:8080/BusinessLayer/ComputeJobPreparation.php
- ```
+ 
 
 
 **(04-A) Job Preparation Server - Installation**
- ```
+ 
 .i) Create a folder named "ConfBuster" into the "/var/www" 
     directory.
 
@@ -224,11 +224,11 @@ ii) Move the "JobPreparationServer" folder of the
     GitHub Distribution into the directory "/var/www/ConfBuster"
 
     sudo mv JobPreparationServer /var/www/ConfBuster/
- ```
+ 
 
 
 **(04-B) Job Preparation Server - Deployment**
- ```
+ 
 
 ..i) Open the Apache port configuration file
 
@@ -260,11 +260,11 @@ iii) Open the Apache Virtual Server configuration file
 .vi) Reboot the Apache server.
 
      sudo /etc/init.d/apache2 restart
- ```
+ 
 
 
 **(04-C) Job Preparation Server - Configuration**
- ```
+ 
 ..i) Open the file script used for sending email :
 
      sudo nano /var/www/ConfBuster/JobPreparationServer/BusinessLayer/Mail/MailManager.py
@@ -281,7 +281,7 @@ iii) Open the database manager :
 
 .iv) Edit the database connection credentials located in the 
      private attributes of the DatabaseManager class.
- ```
+ 
 
 
 **(05-A) Compute Server - Installation**
@@ -289,17 +289,17 @@ iii) Open the database manager :
 Since the server has to be started manually, it does not
 matter where the folder is located. For convenience purpose,
 it is recommended to follow this optional step :
-
+```
 
 i) Move the "ComputeServer" folder of the GitHub Distribution 
    into the directory "/var/www/ConfBuster"
 
-   sudo mv ComputeServer /var/www/ConfBuster/
- ```
+	sudo mv ComputeServer /var/www/ConfBuster/
+ 
 
 
 **(05-B) Compute Server - Deployment**
- ```
+ 
 ..i) Open the database installation script :
     
      nano /var/www/ConfBuster/ComputeServer/DatabaseLayer/Database_DDL_DML_DCL_Script.sql
@@ -333,11 +333,11 @@ iii) Install the database with the following command :
 .vi) Start the Compute Server.
 
      sudo python /var/www/ConfBuster/ComputeServer/BusinessLayer/QueueManager.py
- ```
+ 
 
 
 **(05-C) Compute Server - Configuration**
- ```
+ 
 
 ..i) Open the file used for sending email :
 
@@ -355,7 +355,7 @@ iii) Open the database manager :
 
 .iv) Edit the database connection credentials located in the 
      private attributes of the DatabaseManager class.
- ```
+ 
 # License
 >ConfBuster Web Server
 >Copyright (C) 2018  Gabriel Bégin, Xavier Barbeau, Antony T. Vincent and Patrick Lagüe
